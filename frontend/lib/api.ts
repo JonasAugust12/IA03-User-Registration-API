@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
@@ -23,9 +23,27 @@ export interface RegisterResponse {
   };
 }
 
+export interface ErrorResponse {
+  message: string | string[];
+  error: string;
+  statusCode: number;
+}
+
 export const authApi = {
   register: async (data: RegisterData): Promise<RegisterResponse> => {
-    const response = await api.post<RegisterResponse>('/user/register', data);
-    return response.data;
+    try {
+      const response = await api.post<RegisterResponse>('/user/register', data);
+      return response.data;
+    } catch (error) {
+      if (error instanceof AxiosError && error.response?.data) {
+        const errorData = error.response.data as ErrorResponse;
+        // If message is an array (validation errors), join them
+        const errorMessage = Array.isArray(errorData.message)
+          ? errorData.message.join(', ')
+          : errorData.message;
+        throw new Error(errorMessage);
+      }
+      throw new Error('Failed to register. Please try again.');
+    }
   },
 };

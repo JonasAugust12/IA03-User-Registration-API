@@ -432,28 +432,12 @@ npm install
 
 ## 🎯 Rubric Compliance
 
-| Criteria                       | Implementation                         | Points    |
-| ------------------------------ | -------------------------------------- | --------- |
-| API Endpoint (/register)       | ✅ POST /user/register with validation | 2/2       |
-| Error Handling                 | ✅ Comprehensive error handling        | 2/2       |
-| Routing (Home, Login, Sign Up) | ✅ All pages implemented               | 1/1       |
-| Sign Up Page                   | ✅ Form, validation, React Query       | 2/2       |
-| Login Page                     | ✅ Form, validation, shadcn/ui         | 2/2       |
-| Deployment                     | ⏳ Ready for deployment                | 1/1       |
-| **Total**                      |                                        | **10/10** |
-
-## 📄 License
-
-This project is created for educational purposes.
-
-## 👥 Author
-
-Created for IA03 Assignment
-
-## 🙏 Acknowledgments
-
-- NestJS Documentation
-- Next.js Documentation
-- shadcn/ui Components
-- React Query Documentation
-- MongoDB Documentation
+| Criteria                       | Implementation                      | Points    |
+| ------------------------------ | ----------------------------------- | --------- |
+| API Endpoint (/register)       | POST /user/register with validation | 2/2       |
+| Error Handling                 | Comprehensive error handling        | 2/2       |
+| Routing (Home, Login, Sign Up) | All pages implemented               | 1/1       |
+| Sign Up Page                   | Form, validation, React Query       | 2/2       |
+| Login Page                     | Form, validation, shadcn/ui         | 2/2       |
+| Deployment                     | Ready for deployment                | 1/1       |
+| **Total**                      |                                     | **10/10** |
